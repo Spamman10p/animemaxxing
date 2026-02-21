@@ -1,78 +1,894 @@
 <!DOCTYPE html>
-<html lang=\"en\">
+<html lang="en">
 
 <head>
-  <meta charset=\"UTF-8\">
-  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ANIMEMAXXING — The Anime Movement on Solana</title>
-  <meta name=\"description\"
-    content=\"Stop coping. Start maxxing. The first anime movement on Solana. Become the main character.\">
-  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
-  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-  <link href=\"https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;700&display=swap\" rel=\"stylesheet\">
-  <link rel=\"stylesheet\" href=\"style.css\">
+  <meta name="description"
+    content="Stop coping. Start maxxing. The first anime movement on Solana. Become the main character.">
+  <meta name="keywords" content="animemaxxing, anime, meme coin, solana, crypto, ANIMEMAXXING">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ANIMEMAXXING — Become the Main Character">
+  <meta property="og:description" content="Stop coping. Start maxxing. The first anime movement on Solana.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class=\"navbar\" id=\"navbar\">
-    <div class=\"navbar__inner\">
-      <div class=\"navbar__logo\">
-        <a href=\"#hero\" class=\"navbar__logo-text\">ANIMEMAXX<span>ING</span></a>
-      </div>
-      <div class=\"navbar__links\">
-        <a href=\"#glowup\" class=\"navbar__link\">Glow-Up</a>
-        <a href=\"#tokenomics\" class=\"navbar__link\">Tokenomics</a>
-        <a href=\"#roadmap\" class=\"navbar__link\">Roadmap</a>
-        <a href=\"#community\" class=\"navbar__link\">Community</a>
-      </div>
-      <button class=\"hamburger\" id=\"hamburger\" aria-label=\"Toggle menu\">
-        <span class=\"hamburger__line\"></span>
-        <span class=\"hamburger__line\"></span>
-        <span class=\"hamburger__line\"></span>
-      </button>
-      <a href=\"https://pump.fun\" class=\"navbar__cta\" target=\"_blank\">APE IN NOW</a>
-    </div>
-  </nav>
 
-  <!-- Mobile Nav Overlay -->
-  <div class=\"mobile-nav\" id=\"mobileNav\">
-    <div class=\"mobile-nav__bg\"></div>
-    <div class=\"mobile-nav__content\">
-      <a href=\"#glowup\" class=\"mobile-nav__link\">Glow-Up</a>
-      <a href=\"#tokenomics\" class=\"mobile-nav__link\">Tokenomics</a>
-      <a href=\"#roadmap\" class=\"mobile-nav__link\">Roadmap</a>
-      <a href=\"#community\" class=\"mobile-nav__link\">Community</a>
-      <a href=\"https://pump.fun\" target=\"_blank\" class=\"mobile-nav__cta\">⚡ APE IN NOW</a>
+  <!-- ============================================
+       LOADING SCREEN (Anime Reveal)
+       ============================================ -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-screen__content">
+      <div class="loading-screen__logo">ANIMEMAXX<span>ING</span></div>
+      <div class="loading-screen__tagline">BECOME THE MAIN CHARACTER</div>
+      <div class="loading-screen__bar">
+        <div class="loading-screen__fill" id="loadingFill"></div>
+      </div>
     </div>
   </div>
 
-  <!-- Hero Section -->
-  <section class=\"hero\" id=\"hero\">
-    <div class=\"hero__bg\">
-      <img src=\"meta_bg_3.jpg\" alt=\"ANIMEMAXXING Banner\">
+  <!-- Custom Cursor Glow -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="custom-cursor__trail" id="customCursorTrail"></div>
+
+
+  <!-- ============================================
+       STICKY NAV
+       ============================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <div class="navbar__logo">
+        <a href="https://pump.fun" target="_blank" class="navbar__logo-icon-btn" title="APE IN NOW">
+          <div class="btn__shimmer"></div>
+          <span class="btn__inner">⚡</span>
+        </a>
+        <a href="#hero" class="navbar__logo-text">ANIMEMAXX<span>ING</span></a>
+      </div>
+      <div class="navbar__links">
+        <a href="#glowup" class="navbar__link">Glow-Up</a>
+        <a href="#tokenomics" class="navbar__link">Tokenomics</a>
+        <a href="#roadmap" class="navbar__link">Roadmap</a>
+        <a href="#htb" class="navbar__link">How to Buy</a>
+        <a href="#community" class="navbar__link">Community</a>
+      </div>
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+      <a href="https://pump.fun" class="btn--hero-ape navbar__cta" target="_blank" rel="noopener">
+        <div class="btn__shimmer"></div>
+        <span class="btn__inner">
+          <span class="btn__icon">⚡</span>
+          <span>APE IN NOW</span>
+        </span>
+      </a>
     </div>
-    <div class=\"container\">
-      <div class=\"hero__content\">
-        <div class=\"hero__badge\"><span class=\"pulse-dot\"></span> LIVE ON SOLANA</div>
-        <h1 class=\"hero__title\">ANIME<br>MAXXING</h1>
-        <p class=\"hero__subtitle\">Stop Coping. Start Maxxing.</p>
-        <div class=\"hero__actions\">
-          <a href=\"https://pump.fun\" class=\"btn btn--primary\" target=\"_blank\">APE IN NOW</a>
-          <a href=\"#tokenomics\" class=\"btn btn--secondary\">TOKENOMICS</a>
+  </nav>
+
+  <!-- ============================================
+       MOBILE NAV OVERLAY
+       ============================================ -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav__bg"></div>
+    <div class="mobile-nav__content">
+      <a href="#glowup" class="mobile-nav__link" data-index="1">Glow-Up</a>
+      <a href="#tokenomics" class="mobile-nav__link" data-index="2">Tokenomics</a>
+      <a href="#roadmap" class="mobile-nav__link" data-index="3">Roadmap</a>
+      <a href="#htb" class="mobile-nav__link" data-index="4">How to Buy</a>
+      <a href="#community" class="mobile-nav__link" data-index="5">Community</a>
+      <a href="https://pump.fun" target="_blank" class="mobile-nav__cta" data-index="6">
+        ⚡ APE IN NOW
+      </a>
+    </div>
+  </div>
+
+  <!-- Global Decorative Elements -->
+  <div class="glow-trail glow-trail--cyan" style="top: -100px; left: -100px;"></div>
+  <div class="glow-trail glow-trail--crimson" style="bottom: 10%; right: -50px;"></div>
+
+  <!-- Scanlines Overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero" id="hero">
+    <!-- Background Image -->
+    <div class="hero__bg">
+      <img src="meta_bg_3.jpg" alt="ANIMEMAXXING Banner" onerror="this.style.display='none'">
+      <div class="hero__overlay"
+        style="background-image: url('meta_bg_1.jpg'); background-size: cover; opacity: 0.15; mix-blend-mode: color-dodge;">
+      </div>
+    </div>
+
+    <!-- Animated Orbs -->
+    <div class="hero__orb hero__orb--cyan"></div>
+    <div class="hero__orb hero__orb--crimson"></div>
+    <div class="hero__orb hero__orb--purple"></div>
+    <div class="hero__orb hero__orb--1"
+      style="background: url('meta_bg_1.jpg'); background-size: cover; filter: blur(80px) opacity(0.15); top: 10%; right: 10%;">
+    </div>
+    <div class="hero__orb hero__orb--2"
+      style="background: url('meta_bg_2.jpg'); background-size: cover; filter: blur(100px) opacity(0.12); bottom: 20%; left: 5%;">
+    </div>
+
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="pulse-dot"></span>
+          ANIMEMAXXING &nbsp;·&nbsp; LIVE ON SOLANA
+        </div>
+
+        <h1 class="hero__title">ANIME<br>MAXXING</h1>
+
+        <p class="hero__subtitle">Stop Coping. Start Maxxing.</p>
+
+        <p class="hero__tagline">From E-Rank degen to <span>Shadow Monarch.</span><br>
+          Solo Leveling. JJK S3. Blue Lock. The next arc is <span>ANIMEMAXXING.</span></p>
+
+        <div class="hero__actions">
+          <a href="https://pump.fun" class="btn btn--primary btn--hero-ape" id="apeBtn" target="_blank" rel="noopener">
+            <span class="btn__inner">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg>
+              <span>APE IN NOW</span>
+            </span>
+            <span class="btn__shimmer"></span>
+          </a>
+          <a href="#tokenomics" class="btn btn--secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+            VIEW TOKENOMICS
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COUNTDOWN TIMER (FOMO)
+       ============================================ -->
+  <section class="timer-section" id="countdown">
+    <div class="container">
+      <div class="timer__content reveal">
+        <h3 class="timer__label">TIME UNTIL THE NEXT ARC BEGINS</h3>
+        <div class="timer__grid">
+          <div class="timer__item">
+            <span class="timer__value" id="hours">23</span>
+            <span class="timer__unit">HOURS</span>
+          </div>
+          <div class="timer__sep">:</div>
+          <div class="timer__item">
+            <span class="timer__value" id="minutes">59</span>
+            <span class="timer__unit">MINS</span>
+          </div>
+          <div class="timer__sep">:</div>
+          <div class="timer__item">
+            <span class="timer__value" id="seconds">59</span>
+            <span class="timer__unit">SECS</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Ticker -->
-  <div class=\"ticker\">
-    <div class=\"ticker__track\">
-      <span>ANIMEMAXXING ✦ STOP COPING. START MAXXING. ✦ SOLO LEVELING ARC ✦ JJK S3 ✦ 0% TAX ✦ LP BURNED ✦ BLUE LOCK MAXX ✦ </span>
-      <span>ANIMEMAXXING ✦ STOP COPING. START MAXXING. ✦ SOLO LEVELING ARC ✦ JJK S3 ✦ 0% TAX ✦ LP BURNED ✦ BLUE LOCK MAXX ✦ </span>
+  <!-- ============================================
+       TICKER MARQUEE
+       ============================================ -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <span>ANIMEMAXXING</span>
+      <span class="ticker__dot">✦</span>
+      <span>STOP COPING. START MAXXING.</span>
+      <span class="ticker__dot">✦</span>
+      <span>SOLO LEVELING ARC</span>
+      <span class="ticker__dot">✦</span>
+      <span>JJK S3 · CULLING GAME</span>
+      <span class="ticker__dot">✦</span>
+      <span>0% TAX</span>
+      <span class="ticker__dot">✦</span>
+      <span>LP BURNED</span>
+      <span class="ticker__dot">✦</span>
+      <span>BLUE LOCK MAXX</span>
+      <span class="ticker__dot">✦</span>
+      <span>SHADOW MONARCH ON SOLANA</span>
+      <span class="ticker__dot">✦</span>
+      <span>BECOME THE MAIN CHARACTER</span>
+      <span class="ticker__dot">✦</span>
+      <span>CONTRACT RENOUNCED</span>
+      <span class="ticker__dot">✦</span>
+      <!-- Duplicate for seamless loop -->
+      <span>ANIMEMAXXING</span>
+      <span class="ticker__dot">✦</span>
+      <span>STOP COPING. START MAXXING.</span>
+      <span class="ticker__dot">✦</span>
+      <span>SOLO LEVELING ARC</span>
+      <span class="ticker__dot">✦</span>
+      <span>JJK S3 · CULLING GAME</span>
+      <span class="ticker__dot">✦</span>
+      <span>0% TAX</span>
+      <span class="ticker__dot">✦</span>
+      <span>LP BURNED</span>
+      <span class="ticker__dot">✦</span>
+      <span>BLUE LOCK MAXX</span>
+      <span class="ticker__dot">✦</span>
+      <span>SHADOW MONARCH ON SOLANA</span>
+      <span class="ticker__dot">✦</span>
+      <span>BECOME THE MAIN CHARACTER</span>
+      <span class="ticker__dot">✦</span>
+      <span>CONTRACT RENOUNCED</span>
+      <span class="ticker__dot">✦</span>
     </div>
   </div>
 
-  <script src=\"script.js\"></script>
+  <!-- ============================================
+       STATS BAR
+       ============================================ -->
+  <section class="statsbar">
+    <div class="container">
+      <div class="statsbar__grid">
+        <div class="statsbar__item reveal">
+          <p class="statsbar__value" data-target="1000000000" data-prefix="" data-suffix="">0</p>
+          <p class="statsbar__label">Total Supply</p>
+        </div>
+        <div class="statsbar__divider"></div>
+        <div class="statsbar__item reveal reveal-delay-1">
+          <p class="statsbar__value" data-target="0" data-prefix="" data-suffix="%">0%</p>
+          <p class="statsbar__label">Buy / Sell Tax</p>
+        </div>
+        <div class="statsbar__divider"></div>
+        <div class="statsbar__item reveal reveal-delay-2">
+          <p class="statsbar__value" data-target="100" data-prefix="" data-suffix="%">0%</p>
+          <p class="statsbar__label">Community Owned</p>
+        </div>
+        <div class="statsbar__divider"></div>
+        <div class="statsbar__item reveal reveal-delay-3">
+          <p class="statsbar__value" data-target="9000" data-prefix="" data-suffix="+">0</p>
+          <p class="statsbar__label">Maxx Level</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       GLOW-UP SECTION
+       ============================================ -->
+  <section class="glowup bg-art-section" id="glowup">
+    <img src="meta_bg_1.jpg" alt="" class="bg-art-asset bg-art-asset--1">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label text-glow">The Transformation</p>
+        <h2 class="section-header__title text-gradient">The Glow-Up Protocol</h2>
+        <p class="section-header__desc">Every anime protagonist starts as an NPC. Your portfolio is no different. Enter
+          the arc.</p>
+      </div>
+
+      <div class="glowup__grid staggered-grid">
+        <!-- Card 1 -->
+        <div class="transform-card stagger-item reveal reveal-delay-1" data-tilt
+          style="background-image: url('meta_1_after.jpg');">
+          <div class="transform-card__flashback"
+            style="background-image: url('meta_bg_1.jpg'); filter: grayscale(1) blur(5px);"></div>
+          <div class="transform-card__glow"></div>
+          <div class="transform-card__overlay">
+            <div class="transform-card__header">
+              <p class="transform-card__label">Mission 01: Shadow Arc</p>
+              <h3 class="transform-card__name text-gradient">SHADOW EMINENCE</h3>
+            </div>
+            <div class="transform-card__trait-list">
+              <span class="transform-card__trait-pill">NPC COPYING</span>
+              <span class="transform-card__arrow">⚡</span>
+              <span class="transform-card__trait-pill transform-card__trait-pill--after">I AM ATOMIC</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="transform-card stagger-item reveal reveal-delay-2" data-tilt
+          style="background-image: url('meta_2_after.jpg');">
+          <div class="transform-card__flashback"
+            style="background-image: url('meta_bg_2.jpg'); filter: grayscale(1) blur(5px);"></div>
+          <div class="transform-card__glow"></div>
+          <div class="transform-card__overlay">
+            <div class="transform-card__header">
+              <p class="transform-card__label">Mission 02: 100% Arc</p>
+              <h3 class="transform-card__name text-gradient">MOB PSYCHO</h3>
+            </div>
+            <div class="transform-card__trait-list">
+              <span class="transform-card__trait-pill">EMOTIONLESS</span>
+              <span class="transform-card__arrow">⚡</span>
+              <span class="transform-card__trait-pill transform-card__trait-pill--after">AWAKENED 100%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="transform-card stagger-item reveal reveal-delay-3" data-tilt
+          style="background-image: url('meta_3_after.jpg');">
+          <div class="transform-card__flashback"
+            style="background-image: url('meta_bg_3.jpg'); filter: grayscale(1) blur(5px);"></div>
+          <div class="transform-card__glow"></div>
+          <div class="transform-card__overlay">
+            <div class="transform-card__header">
+              <p class="transform-card__label">Mission 03: Soul Arc</p>
+              <h3 class="transform-card__name text-gradient">ICHIGO HOLLOW</h3>
+            </div>
+            <div class="transform-card__trait-list">
+              <span class="transform-card__trait-pill">SUBSTITUTE</span>
+              <span class="transform-card__arrow">⚡</span>
+              <span class="transform-card__trait-pill transform-card__trait-pill--after">VASTO LORDE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="transform-card stagger-item reveal reveal-delay-4" data-tilt
+          style="background-image: url('meta_4_after.jpg');">
+          <div class="transform-card__flashback"
+            style="background-image: url('hero-main.jpg'); filter: grayscale(1) blur(5px);"></div>
+          <div class="transform-card__glow"></div>
+          <div class="transform-card__overlay">
+            <div class="transform-card__header">
+              <p class="transform-card__label">Mission 04: Monarch Arc</p>
+              <h3 class="transform-card__name text-gradient">SUNG JINWOO</h3>
+            </div>
+            <div class="transform-card__trait-list">
+              <span class="transform-card__trait-pill">E-RANK NPC</span>
+              <span class="transform-card__arrow">⚡</span>
+              <span class="transform-card__trait-pill transform-card__trait-pill--after">SHADOW MONARCH</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TOKENOMICS SECTION
+       ============================================ -->
+  <section class="tokenomics bg-art-section" id="tokenomics">
+    <img src="meta_bg_2.jpg" alt="" class="bg-art-asset bg-art-asset--1" style="opacity: 0.05;">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label text-glow">ANIMEMAXXING</p>
+        <h2 class="section-header__title text-gradient">Tokenomics</h2>
+        <p class="section-header__desc">Clean supply. No tax. No BS. Just pure anime energy.</p>
+      </div>
+
+      <div class="tokenomics__grid">
+        <div class="token-card reveal reveal-delay-1" data-tilt>
+          <span class="token-card__icon">💎</span>
+          <p class="token-card__label">Total Supply</p>
+          <p class="token-card__value token-card__value--cyan">1,000,000,000</p>
+        </div>
+
+        <div class="token-card reveal reveal-delay-2" data-tilt>
+          <span class="token-card__icon">🔥</span>
+          <p class="token-card__label">LP Status</p>
+          <p class="token-card__value token-card__value--crimson">BURNED</p>
+        </div>
+
+        <div class="token-card reveal reveal-delay-3" data-tilt>
+          <span class="token-card__icon">🎯</span>
+          <p class="token-card__label">Buy / Sell Tax</p>
+          <p class="token-card__value token-card__value--gold">0 / 0</p>
+        </div>
+
+        <div class="token-card reveal reveal-delay-4" data-tilt>
+          <span class="token-card__icon">🔓</span>
+          <p class="token-card__label">Contract</p>
+          <p class="token-card__value">RENOUNCED</p>
+        </div>
+      </div>
+
+      <div class="contract-box reveal">
+        <div>
+          <p class="contract-box__label">Contract Address</p>
+          <p class="contract-box__address" id="contractAddress">COMING SOON — ANIMEMAXX ON SOLANA</p>
+        </div>
+        <button class="contract-box__copy" id="copyBtn" onclick="copyContract()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+          </svg>
+          <span id="copyText">COPY</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ROADMAP / ANIME ARC
+       ============================================ -->
+  <section class="roadmap bg-art-section" id="roadmap">
+    <img src="meta_bg_3.jpg" alt="" class="bg-art-asset bg-art-asset--2" style="opacity: 0.05;">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label text-glow">The Journey</p>
+        <h2 class="section-header__title text-gradient">The Anime Arc</h2>
+        <p class="section-header__desc">Every main character has an arc. Here's ours.</p>
+      </div>
+
+      <!-- Timeline connector (desktop) -->
+      <div class="roadmap__connector">
+        <div class="roadmap__connector-line"></div>
+        <div class="roadmap__connector-glow"></div>
+      </div>
+
+      <div class="roadmap__timeline">
+        <!-- Phase 1 -->
+        <div class="phase-card phase-card--crimson reveal reveal-delay-1">
+          <div class="phase-card__node">
+            <div class="phase-card__node-ring"></div>
+            <span class="phase-card__node-num">01</span>
+          </div>
+          <div class="phase-card__inner">
+            <div class="phase-card__head">
+              <p class="phase-card__number">Phase 01</p>
+              <h3 class="phase-card__title">🚞 NPC Arc &mdash; Pre-Launch</h3>
+            </div>
+            <ul class="phase-card__list">
+              <li><span class="li-dot"></span>Token stealth launch on pump.fun</li>
+              <li><span class="li-dot"></span>Website &amp; socials live</li>
+              <li><span class="li-dot"></span>First 500 holders</li>
+              <li><span class="li-dot"></span>Meme campaign ignition</li>
+            </ul>
+            <div class="phase-card__bar">
+              <div class="phase-card__bar-fill" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="phase-card phase-card--gold reveal reveal-delay-2">
+          <div class="phase-card__node">
+            <div class="phase-card__node-ring"></div>
+            <span class="phase-card__node-num">02</span>
+          </div>
+          <div class="phase-card__inner">
+            <div class="phase-card__head">
+              <p class="phase-card__number">Phase 02</p>
+              <h3 class="phase-card__title">💪 Hardmaxx Arc &mdash; Grind</h3>
+            </div>
+            <ul class="phase-card__list">
+              <li><span class="li-dot"></span>5,000 holders</li>
+              <li><span class="li-dot"></span>Anime influencer collabs</li>
+              <li><span class="li-dot"></span>Viral X &amp; TikTok campaign</li>
+              <li><span class="li-dot"></span>$500K market cap</li>
+            </ul>
+            <div class="phase-card__bar">
+              <div class="phase-card__bar-fill" style="width: 45%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="phase-card phase-card--cyan reveal reveal-delay-3">
+          <div class="phase-card__node">
+            <div class="phase-card__node-ring"></div>
+            <span class="phase-card__node-num">03</span>
+          </div>
+          <div class="phase-card__inner">
+            <div class="phase-card__head">
+              <p class="phase-card__number">Phase 03</p>
+              <h3 class="phase-card__title">⚡ Culling Game Arc &mdash; Ascent</h3>
+            </div>
+            <ul class="phase-card__list">
+              <li><span class="li-dot"></span>DEX listing &amp; DexScreener trending</li>
+              <li><span class="li-dot"></span>KOL anime community blitz</li>
+              <li><span class="li-dot"></span>ANIMEMAXXING merch drop</li>
+              <li><span class="li-dot"></span>$5M market cap target</li>
+            </ul>
+            <div class="phase-card__bar">
+              <div class="phase-card__bar-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="phase-card phase-card--purple reveal reveal-delay-4">
+          <div class="phase-card__node">
+            <div class="phase-card__node-ring"></div>
+            <span class="phase-card__node-num">04</span>
+          </div>
+          <div class="phase-card__inner">
+            <div class="phase-card__head">
+              <p class="phase-card__number">Phase 04</p>
+              <h3 class="phase-card__title">👑 Shadow Monarch &mdash; Endgame</h3>
+            </div>
+            <ul class="phase-card__list">
+              <li><span class="li-dot"></span>CEX listing campaign</li>
+              <li><span class="li-dot"></span>Anime studio collab</li>
+              <li><span class="li-dot"></span>Season 2 expansion</li>
+              <li><span class="li-dot"></span>Global movement — <em>Arise.</em></li>
+            </ul>
+            <div class="phase-card__bar">
+              <div class="phase-card__bar-fill" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       HOW TO BUY
+       ============================================ -->
+  <section class="howtobuy bg-art-section" id="howtobuy">
+    <img src="meta_bg_1.jpg" alt="" class="bg-art-asset bg-art-asset--1"
+      style="opacity: 0.05; filter: blur(100px);">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label text-glow">Get In</p>
+        <h2 class="section-header__title text-gradient">The Main Character Journey</h2>
+        <p class="section-header__desc">Follow the path to absolute dominance. Four steps to maxxing your potential.</p>
+      </div>
+
+      <div class="htb__grid">
+        <div class="htb__card reveal reveal-delay-1">
+          <div class="htb__step">01</div>
+          <div class="htb__icon">👛</div>
+          <h3 class="htb__title">Summon Your Wallet</h3>
+          <p class="htb__desc">Download Phantom or Solflare. This is your inventory for the digital arc. Keep your
+            secret phrases safe — they are your life force.</p>
+        </div>
+
+        <div class="htb__card reveal reveal-delay-2">
+          <div class="htb__step">02</div>
+          <div class="htb__icon">◎</div>
+          <h3 class="htb__title">Manifest SOL</h3>
+          <p class="htb__desc">Transfer Solana (SOL) from any base to your inventory. This is the mana required for
+            the transformation.</p>
+        </div>
+
+        <div class="htb__card reveal reveal-delay-3">
+          <div class="htb__step">03</div>
+          <div class="htb__icon">🔥</div>
+          <h3 class="htb__title">Enter the Arena</h3>
+          <p class="htb__desc">Connect to <a href="https://pump.fun" target="_blank"
+              style="color: var(--cyan); text-decoration: none;">pump.fun</a>. Search for <strong>ANIMEMAXXING</strong>.
+            Don't cope with fakes — only the real movement scales.</p>
+        </div>
+
+        <div class="htb__card htb__card--highlight reveal reveal-delay-4">
+          <div class="htb__step">04</div>
+          <div class="htb__icon">⚡</div>
+          <h3 class="htb__title">Final Awakening</h3>
+          <p class="htb__desc">Swap your SOL for ANIMEMAXXING. Witness your portfolio's metamorphosis. You are now the
+            main character.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       MEME ART GALLERY
+       ============================================ -->
+  <section class="gallery bg-art-section" id="gallery">
+    <img src="meta_bg_1.jpg" alt="" class="bg-art-asset bg-art-asset--1"
+      style="opacity: 0.04; filter: blur(120px);">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label text-glow">Community Art</p>
+        <h2 class="section-header__title text-gradient">The Meme Gallery</h2>
+        <p class="section-header__desc">The artifacts of our ascension. Each frame a fragment of the ANIMEMAXXING arc.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="gallery__filters reveal">
+        <button class="gallery__filter active" data-filter="all">All</button>
+        <button class="gallery__filter" data-filter="character">Characters</button>
+        <button class="gallery__filter" data-filter="scene">Scenes</button>
+        <button class="gallery__filter" data-filter="meme">Memes</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery__grid" id="galleryGrid">
+        <div class="gallery__item gallery__item--tall reveal" data-category="meme" data-tilt>
+          <img src="gallery_shanks_dip.png" alt="When The Market Dips" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">MEME</span>
+            <h4 class="gallery__caption">Market Dips?</h4>
+            <p class="gallery__sub">But You're The Main Character</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="meme" data-tilt>
+          <img src="gallery_stop_coping.png" alt="Stop Coping Start Maxxing" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">MEME</span>
+            <h4 class="gallery__caption">Stop Coping</h4>
+            <p class="gallery__sub">Start Maxxing</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="character" data-tilt>
+          <img src="gallery_shadow_npc.png" alt="NPC Traders" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">CHARACTER</span>
+            <h4 class="gallery__caption">NPC Traders</h4>
+            <p class="gallery__sub">I Operate From The Shadows</p>
+          </div>
+        </div>
+
+        <div class="gallery__item gallery__item--wide reveal" data-category="meme" data-tilt>
+          <img src="gallery_shitcoins_vs_maxx.png" alt="Shitcoins vs ANIMEMAXXING" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">MEME</span>
+            <h4 class="gallery__caption">The Choice</h4>
+            <p class="gallery__sub">Buying Shitcoins vs. ANIMEMAXXING on Solana</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="character" data-tilt>
+          <img src="gallery_mob_100.png" alt="Portfolio at 100%" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">CHARACTER</span>
+            <h4 class="gallery__caption">Portfolio 100%</h4>
+            <p class="gallery__sub">Maximum Maxxing Achieved</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="meme" data-tilt>
+          <img src="gallery_bought_dip.png" alt="POV: You Bought The Dip" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">MEME</span>
+            <h4 class="gallery__caption">Bought The Dip</h4>
+            <p class="gallery__sub">...And It Keeps Dipping</p>
+          </div>
+        </div>
+
+        <div class="gallery__item gallery__item--tall reveal" data-category="character" data-tilt>
+          <img src="gallery_vasto_lorde.png" alt="Vasto Lorde Mode" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">CHARACTER</span>
+            <h4 class="gallery__caption">Vasto Lorde Mode</h4>
+            <p class="gallery__sub">Paper Hands Selling? I Don't Care.</p>
+          </div>
+        </div>
+
+        <div class="gallery__item gallery__item--wide reveal" data-category="scene" data-tilt>
+          <img src="gallery_normie_ascended.png" alt="Normie to Ascended" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">SCENE</span>
+            <h4 class="gallery__caption">The Ascension</h4>
+            <p class="gallery__sub">Normie → Degen → ASCENDED: ANIMEMAXXING</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="character" data-tilt>
+          <img src="gallery_arise.png" alt="They Said It Was Over — ARISE." loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">CHARACTER</span>
+            <h4 class="gallery__caption">ARISE.</h4>
+            <p class="gallery__sub">They Said It Was Over</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="character" data-tilt>
+          <img src="gallery_npc_monarch.png" alt="NPC to Shadow Monarch" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">CHARACTER</span>
+            <h4 class="gallery__caption">Shadow Monarch</h4>
+            <p class="gallery__sub">They Called Me An NPC</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="scene" data-tilt>
+          <img src="gallery_stop_maxxing_chart.png" alt="Stop Coping Start Maxxing Chart" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">SCENE</span>
+            <h4 class="gallery__caption">The Chart Speaks</h4>
+            <p class="gallery__sub">Stop Coping. Start Maxxing.</p>
+          </div>
+        </div>
+
+        <div class="gallery__item gallery__item--wide reveal" data-category="meme" data-tilt>
+          <img src="gallery_paper_diamond.png" alt="Paper Hands vs Diamond Hands" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">MEME</span>
+            <h4 class="gallery__caption">Paper vs. Diamond</h4>
+            <p class="gallery__sub">Before: Sold at -10% · After: Diamond Hands ANIMEMAXXING</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightboxClose">&times;</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="Gallery preview">
+    <div class="lightbox__info">
+      <h3 class="lightbox__title" id="lightboxTitle"></h3>
+      <p class="lightbox__desc" id="lightboxDesc"></p>
+    </div>
+  </div>
+
+  <!-- ============================================
+       COMMUNITY / CTA SECTION
+       ============================================ -->
+  <section class="community bg-art-section" id="community">
+    <img src="meta_bg_2.jpg" alt="" class="bg-art-asset bg-art-asset--2"
+      style="opacity: 0.05; filter: blur(80px);">
+    <div class="container">
+      <div class="community__cta-box reveal">
+        <div class="hero__orb hero__orb--cyan" style="width: 300px; height: 300px; top: -150px; right: -150px;"></div>
+        <h2 class="community__title text-gradient">Join the Movement</h2>
+        <p class="community__desc">10,000 anime degens can't be wrong.<br>Stop being an NPC. Glow up your portfolio. The
+          ANIMEMAXXING arc has begun.</p>
+
+        <div class="community__links">
+          <a href="https://t.me/animemaxxing" class="social-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.113 15.657l-2.298 1.082c-2.43.917-3.963 1.488-4.59 1.713-.8.283-1.163.313-2.163.313-.42 0-.817-.058-1.21-.173-.41-.12-.76-.328-1.05-.62-.31-.32-.51-.72-.59-1.18-.08-.42-.03-.89.15-1.4.15-.43.43-.88.82-1.37.52-.64 1.22-1.28 2.05-1.91l3.52-2.61c.14-.1.35-.15.53-.15.22 0 .42.08.56.24.18.21.18.52.02.76l-2.73 2.15c-.15.12-.22.28-.2.47l.07.41c.02.1.08.18.17.23.1.05.21.06.31.02l2.43-.91c.21-.08.45.02.54.21.1.2.04.44-.14.56l-1.32 1.04v.01z" />
+            </svg>
+            <div class="social-info">
+              <span>Telegram</span>
+              <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span>4,206 ONLINE</span>
+              </div>
+            </div>
+          </a>
+          <a href="https://x.com/animemaxx" class="social-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            <div class="social-info">
+              <span>Twitter / X</span>
+            </div>
+          </a>
+          <a href="https://pump.fun" class="social-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+            <div class="social-info">
+              <span>Pump.fun</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">
+        ANIMEMAXXING is a meme coin with no intrinsic value or expectation of financial return.
+        Not financial advice. DYOR. <br>
+        Built by degens, for degens. © 2026 ANIMEMAXXING
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ============================================
+       EASTER EGG — KONAMI CODE AWAKENING
+       ============================================ -->
+  <div class="awakening-overlay" id="awakeningOverlay" aria-hidden="true">
+    <div class="awakening-bg"></div>
+    <div class="awakening-content">
+      <p class="awakening-pre">🔓 SECRET UNLOCKED</p>
+      <h2 class="awakening-title" id="awakeningTitle">YOU HAVE<br>AWAKENED</h2>
+      <p class="awakening-sub">The shadows recognize you.<br>You were never an NPC.</p>
+      <div class="awakening-particles" id="awakeningParticles"></div>
+      <button class="awakening-btn" id="awakeningClose">ARISE ⚡</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    /* ============================
+       KONAMI CODE EASTER EGG
+       ↑ ↑ ↓ ↓ ← → ← → B A
+       ============================ */
+    (function () {
+      const KONAMI = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+      let idx = 0;
+
+      document.addEventListener('keydown', function (e) {
+        if (e.keyCode === KONAMI[idx]) {
+          idx++;
+          if (idx === KONAMI.length) {
+            idx = 0;
+            triggerAwakening();
+          }
+        } else {
+          idx = (e.keyCode === KONAMI[0]) ? 1 : 0;
+        }
+      });
+
+      /* Mobile tap easter egg: tap ANIMEMAXXING logo 7x fast */
+      let logoTaps = 0, logoTimer;
+      const logo = document.querySelector('.navbar__logo');
+      if (logo) {
+        logo.addEventListener('click', function (e) {
+          e.preventDefault();
+          logoTaps++;
+          clearTimeout(logoTimer);
+          logoTimer = setTimeout(() => { logoTaps = 0; }, 1500);
+          if (logoTaps >= 7) {
+            logoTaps = 0;
+            triggerAwakening();
+          }
+        });
+      }
+
+      function triggerAwakening() {
+        const overlay = document.getElementById('awakeningOverlay');
+        const title = document.getElementById('awakeningTitle');
+        const parts = document.getElementById('awakeningParticles');
+
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        /* Glitch effect on title */
+        title.classList.add('glitch');
+        setTimeout(() => title.classList.remove('glitch'), 1200);
+
+        /* Particle burst */
+        parts.innerHTML = '';
+        for (let i = 0; i < 28; i++) {
+          const p = document.createElement('span');
+          p.className = 'aw-particle';
+          p.style.cssText = [
+            '--dx:' + (Math.random() * 360 | 0) + 'deg',
+            '--dist:' + (80 + Math.random() * 140 | 0) + 'px',
+            '--delay:' + (Math.random() * 0.4).toFixed(2) + 's',
+            '--size:' + (4 + Math.random() * 6 | 0) + 'px',
+          ].join(';');
+          parts.appendChild(p);
+        }
+
+        document.getElementById('awakeningClose').onclick = closeAwakening;
+        overlay.onclick = function (e) { if (e.target === overlay) closeAwakening(); };
+      }
+
+      function closeAwakening() {
+        const overlay = document.getElementById('awakeningOverlay');
+        overlay.classList.add('closing');
+        setTimeout(function () {
+          overlay.classList.remove('active', 'closing');
+          document.body.style.overflow = '';
+        }, 500);
+      }
+    })();
+  </script>
 </body>
+
 </html>
