@@ -27,6 +27,24 @@
 <body>
 
   <!-- ============================================
+       LOADING SCREEN (Anime Reveal)
+       ============================================ -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-screen__content">
+      <div class="loading-screen__logo">ANIMEMAXX<span>ING</span></div>
+      <div class="loading-screen__tagline">BECOME THE MAIN CHARACTER</div>
+      <div class="loading-screen__bar">
+        <div class="loading-screen__fill" id="loadingFill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor Glow -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="custom-cursor__trail" id="customCursorTrail"></div>
+
+
+  <!-- ============================================
        STICKY NAV
        ============================================ -->
   <nav class="navbar" id="navbar">
@@ -45,6 +63,12 @@
         <a href="#htb" class="navbar__link">How to Buy</a>
         <a href="#community" class="navbar__link">Community</a>
       </div>
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
       <a href="https://pump.fun" class="btn--hero-ape navbar__cta" target="_blank" rel="noopener">
         <div class="btn__shimmer"></div>
         <span class="btn__inner">
@@ -54,6 +78,23 @@
       </a>
     </div>
   </nav>
+
+  <!-- ============================================
+       MOBILE NAV OVERLAY
+       ============================================ -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav__bg"></div>
+    <div class="mobile-nav__content">
+      <a href="#glowup" class="mobile-nav__link" data-index="1">Glow-Up</a>
+      <a href="#tokenomics" class="mobile-nav__link" data-index="2">Tokenomics</a>
+      <a href="#roadmap" class="mobile-nav__link" data-index="3">Roadmap</a>
+      <a href="#htb" class="mobile-nav__link" data-index="4">How to Buy</a>
+      <a href="#community" class="mobile-nav__link" data-index="5">Community</a>
+      <a href="https://pump.fun" target="_blank" class="mobile-nav__cta" data-index="6">
+        ⚡ APE IN NOW
+      </a>
+    </div>
+  </div>
 
   <!-- Global Decorative Elements -->
   <div class="glow-trail glow-trail--cyan" style="top: -100px; left: -100px;"></div>
@@ -127,6 +168,33 @@
     <div class="hero__scroll">
       <span>Scroll</span>
       <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COUNTDOWN TIMER (FOMO)
+       ============================================ -->
+  <section class="timer-section" id="countdown">
+    <div class="container">
+      <div class="timer__content reveal">
+        <h3 class="timer__label">TIME UNTIL THE NEXT ARC BEGINS</h3>
+        <div class="timer__grid">
+          <div class="timer__item">
+            <span class="timer__value" id="hours">23</span>
+            <span class="timer__unit">HOURS</span>
+          </div>
+          <div class="timer__sep">:</div>
+          <div class="timer__item">
+            <span class="timer__value" id="minutes">59</span>
+            <span class="timer__unit">MINS</span>
+          </div>
+          <div class="timer__sep">:</div>
+          <div class="timer__item">
+            <span class="timer__value" id="seconds">59</span>
+            <span class="timer__unit">SECS</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -520,6 +588,150 @@
   </section>
 
   <!-- ============================================
+       MEME ART GALLERY
+       ============================================ -->
+  <section class="gallery bg-art-section" id="gallery">
+    <img src="meta_bg_1.jpg" alt="" class="bg-art-asset bg-art-asset--1" style="opacity: 0.04; filter: blur(120px);">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-header__label text-glow">Community Art</p>
+        <h2 class="section-header__title text-gradient">The Meme Gallery</h2>
+        <p class="section-header__desc">The artifacts of our ascension. Each frame a fragment of the ANIMEMAXXING arc.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="gallery__filters reveal">
+        <button class="gallery__filter active" data-filter="all">All</button>
+        <button class="gallery__filter" data-filter="character">Characters</button>
+        <button class="gallery__filter" data-filter="scene">Scenes</button>
+        <button class="gallery__filter" data-filter="meme">Memes</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery__grid" id="galleryGrid">
+        <div class="gallery__item gallery__item--tall reveal" data-category="meme" data-tilt>
+          <img src="gallery_shanks_dip.png" alt="When The Market Dips" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">MEME</span>
+            <h4 class="gallery__caption">Market Dips?</h4>
+            <p class="gallery__sub">But You're The Main Character</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="meme" data-tilt>
+          <img src="gallery_stop_coping.png" alt="Stop Coping Start Maxxing" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">MEME</span>
+            <h4 class="gallery__caption">Stop Coping</h4>
+            <p class="gallery__sub">Start Maxxing</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="character" data-tilt>
+          <img src="gallery_shadow_npc.png" alt="NPC Traders" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">CHARACTER</span>
+            <h4 class="gallery__caption">NPC Traders</h4>
+            <p class="gallery__sub">I Operate From The Shadows</p>
+          </div>
+        </div>
+
+        <div class="gallery__item gallery__item--wide reveal" data-category="meme" data-tilt>
+          <img src="gallery_shitcoins_vs_maxx.png" alt="Shitcoins vs ANIMEMAXXING" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">MEME</span>
+            <h4 class="gallery__caption">The Choice</h4>
+            <p class="gallery__sub">Buying Shitcoins vs. ANIMEMAXXING on Solana</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="character" data-tilt>
+          <img src="gallery_mob_100.png" alt="Portfolio at 100%" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">CHARACTER</span>
+            <h4 class="gallery__caption">Portfolio 100%</h4>
+            <p class="gallery__sub">Maximum Maxxing Achieved</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="meme" data-tilt>
+          <img src="gallery_bought_dip.png" alt="POV: You Bought The Dip" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">MEME</span>
+            <h4 class="gallery__caption">Bought The Dip</h4>
+            <p class="gallery__sub">...And It Keeps Dipping</p>
+          </div>
+        </div>
+
+        <div class="gallery__item gallery__item--tall reveal" data-category="character" data-tilt>
+          <img src="gallery_vasto_lorde.png" alt="Vasto Lorde Mode" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">CHARACTER</span>
+            <h4 class="gallery__caption">Vasto Lorde Mode</h4>
+            <p class="gallery__sub">Paper Hands Selling? I Don't Care.</p>
+          </div>
+        </div>
+
+        <div class="gallery__item gallery__item--wide reveal" data-category="scene" data-tilt>
+          <img src="gallery_normie_ascended.png" alt="Normie to Ascended" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">SCENE</span>
+            <h4 class="gallery__caption">The Ascension</h4>
+            <p class="gallery__sub">Normie → Degen → ASCENDED: ANIMEMAXXING</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="character" data-tilt>
+          <img src="gallery_arise.png" alt="They Said It Was Over — ARISE." loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">CHARACTER</span>
+            <h4 class="gallery__caption">ARISE.</h4>
+            <p class="gallery__sub">They Said It Was Over</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="character" data-tilt>
+          <img src="gallery_npc_monarch.png" alt="NPC to Shadow Monarch" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">CHARACTER</span>
+            <h4 class="gallery__caption">Shadow Monarch</h4>
+            <p class="gallery__sub">They Called Me An NPC</p>
+          </div>
+        </div>
+
+        <div class="gallery__item reveal" data-category="scene" data-tilt>
+          <img src="gallery_stop_maxxing_chart.png" alt="Stop Coping Start Maxxing Chart" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">SCENE</span>
+            <h4 class="gallery__caption">The Chart Speaks</h4>
+            <p class="gallery__sub">Stop Coping. Start Maxxing.</p>
+          </div>
+        </div>
+
+        <div class="gallery__item gallery__item--wide reveal" data-category="meme" data-tilt>
+          <img src="gallery_paper_diamond.png" alt="Paper Hands vs Diamond Hands" loading="lazy">
+          <div class="gallery__overlay">
+            <span class="gallery__tag">MEME</span>
+            <h4 class="gallery__caption">Paper vs. Diamond</h4>
+            <p class="gallery__sub">Before: Sold at -10% · After: Diamond Hands ANIMEMAXXING</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightboxClose">&times;</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="Gallery preview">
+    <div class="lightbox__info">
+      <h3 class="lightbox__title" id="lightboxTitle"></h3>
+      <p class="lightbox__desc" id="lightboxDesc"></p>
+    </div>
+  </div>
+
+  <!-- ============================================
        COMMUNITY / CTA SECTION
        ============================================ -->
   <section class="community bg-art-section" id="community">
@@ -532,28 +744,36 @@
           ANIMEMAXXING arc has begun.</p>
 
         <div class="community__links">
+          <a href="https://t.me/animemaxxing" class="social-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.113 15.657l-2.298 1.082c-2.43.917-3.963 1.488-4.59 1.713-.8.283-1.163.313-2.163.313-.42 0-.817-.058-1.21-.173-.41-.12-.76-.328-1.05-.62-.31-.32-.51-.72-.59-1.18-.08-.42-.03-.89.15-1.4.15-.43.43-.88.82-1.37.52-.64 1.22-1.28 2.05-1.91l3.52-2.61c.14-.1.35-.15.53-.15.22 0 .42.08.56.24.18.21.18.52.02.76l-2.73 2.15c-.15.12-.22.28-.2.47l.07.41c.02.1.08.18.17.23.1.05.21.06.31.02l2.43-.91c.21-.08.45.02.54.21.1.2.04.44-.14.56l-1.32 1.04v.01z" />
+            </svg>
+            <div class="social-info">
+              <span>Telegram</span>
+              <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span>4,206 ONLINE</span>
+              </div>
+            </div>
+          </a>
           <a href="https://x.com/animemaxx" class="social-link" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
             </svg>
-            <span>Twitter / X</span>
-          </a>
-          <a href="https://dexscreener.com" class="social-link" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
-            <span>Chart (Soon)</span>
+            <div class="social-info">
+              <span>Twitter / X</span>
+            </div>
           </a>
           <a href="https://pump.fun" class="social-link" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
             </svg>
-            <span>Pump.fun</span>
+            <div class="social-info">
+              <span>Pump.fun</span>
+            </div>
           </a>
         </div>
       </div>
@@ -573,66 +793,14 @@
     </div>
   </footer>
 
+
   <!-- ============================================
        EASTER EGG — KONAMI CODE AWAKENING
        ============================================ -->
   <div class="awakening-overlay" id="awakeningOverlay" aria-hidden="true">
-    <div class="awakening-bg"></div>
-    <div class="awakening-content">
-      <p class="awakening-pre">🔓 SECRET UNLOCKED</p>
-      <h2 class="awakening-title" id="awakeningTitle">YOU HAVE<br>AWAKENED</h2>
-      <p class="awakening-sub">The shadows recognize you.<br>You were never an NPC.</p>
-      <div class="awakening-particles" id="awakeningParticles"></div>
-      <button class="awakening-btn" id="awakeningClose">ARISE ⚡</button>
-    </div>
   </div>
 
   <script src="script.js"></script>
-  <script>
-    (function () {
-      const KONAMI = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-      let idx = 0;
-      document.addEventListener('keydown', function (e) {
-        if (e.keyCode === KONAMI[idx]) {
-          idx++;
-          if (idx === KONAMI.length) { idx = 0; triggerAwakening(); }
-        } else { idx = (e.keyCode === KONAMI[0]) ? 1 : 0; }
-      });
-      let logoTaps = 0, logoTimer;
-      const logo = document.querySelector('.navbar__logo');
-      if (logo) {
-        logo.addEventListener('click', function (e) {
-          e.preventDefault(); logoTaps++;
-          clearTimeout(logoTimer);
-          logoTimer = setTimeout(() => { logoTaps = 0; }, 1500);
-          if (logoTaps >= 7) { logoTaps = 0; triggerAwakening(); }
-        });
-      }
-      function triggerAwakening() {
-        const overlay = document.getElementById('awakeningOverlay');
-        const title = document.getElementById('awakeningTitle');
-        const parts = document.getElementById('awakeningParticles');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        title.classList.add('glitch');
-        setTimeout(() => title.classList.remove('glitch'), 1200);
-        parts.innerHTML = '';
-        for (let i = 0; i < 28; i++) {
-          const p = document.createElement('span');
-          p.className = 'aw-particle';
-          p.style.cssText = ['--dx:' + (Math.random() * 360 | 0) + 'deg', '--dist:' + (80 + Math.random() * 140 | 0) + 'px', '--delay:' + (Math.random() * 0.4).toFixed(2) + 's', '--size:' + (4 + Math.random() * 6 | 0) + 'px'].join(';');
-          parts.appendChild(p);
-        }
-        document.getElementById('awakeningClose').onclick = closeAwakening;
-        overlay.onclick = function (e) { if (e.target === overlay) closeAwakening(); };
-      }
-      function closeAwakening() {
-        const overlay = document.getElementById('awakeningOverlay');
-        overlay.classList.add('closing');
-        setTimeout(function () { overlay.classList.remove('active', 'closing'); document.body.style.overflow = ''; }, 500);
-      }
-    })();
-  </script>
 </body>
 
 </html>
