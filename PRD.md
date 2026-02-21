@@ -1,55 +1,62 @@
-# ANIMEMAXXING — Product Requirements Document
+# PRD — ANIMEMAXXING Site Improvements (Phase 2)
 
-## 🎯 Concept
-
-**ANIMEMAXXING** is a meme coin website that fuses two massive internet trends: **anime culture** and **looksmaxxing**. The concept: your favorite anime characters are on their own looksmaxxing journey — glow-ups, transformations, and ascension moments — and **$ANIMEMAXX** is the token of that movement.
-
-> *"Stop coping. Start maxxing. Become the main character."*
+## 1. Goal Description
+The objective is to transform the ANIMEMAXXING landing page from a high-quality static site into a premium, interactive "Main Character" experience. This includes critical UX fixes (mobile navigation), engagement boosters (meme gallery), and elite visual treatments (custom cursor, cinematic grain) to ensure a 10/10 first impression for new users and potential investors on Solana.
 
 ---
 
-## 🧠 Research Summary
+## 2. High Impact Features (UX & First Impression)
 
-### Trending Anime (2025-2026)
+### [NEW] Mobile Hamburger Menu
+*   **Problem**: Navigation links are inaccessible or poorly displayed on mobile viewports.
+*   **Solution**: Implement a fullscreen or slide-in animated hamburger menu for mobile.
+*   **Aesthetic**: Glassmorphism panel with neon outline and staggered link entries.
 
-| Anime | Why It's Relevant |
-|-------|-------------------|
-| **Solo Leveling S2** | Ultimate glow-up — weakest hunter becomes overpowered |
-| **Jujutsu Kaisen S3** (Jan 2026) | Gojo, Sukuna — peak "maxxed" character designs |
-| **Bleach: TYBW Final** (Summer 2026) | Ichigo's final form = looksmaxxing endgame |
-| **Dandadan S2** | Gen Z anime with wild transformations |
-| **One Punch Man S3** | Saitama = the ultimate anti-looksmaxxer |
+### [NEW] Custom Cursor Glow Trail
+*   **Problem**: Standard cursor feels disconnected from the "High-Tech Anime" theme.
+*   **Solution**: A neon cyan glow (with optional particle trail) that follows the cursor.
+*   **Interaction**: Glow intensifies on hover of CTAs or interactive cards.
 
----
-
-## 🎨 Brand Identity
-
-### Name: **ANIMEMAXXING** (ticker: $ANIMEMAXX)
-### Tagline: *"Become the main character."*
-
-### Visual Direction
-- **Dark mode** with anime-inspired neon accents
-- **Colors**: Deep space black, electric cyan (Gojo eyes), crimson red (Sukuna), gold (power-up)
-- **Typography**: Bold, angular — inspired by anime title cards
-- **Aesthetic**: Cyberpunk × anime × looksmaxxing edits
+### [NEW] Anime-Style Reveal (Loading Screen)
+*   **Problem**: Instant page load lacks the "cinematic impact" of a premium project.
+*   **Solution**: A 1.5s masked logo animation or "Metamorphosis" progress bar that reveals the site.
 
 ---
 
-## 🔧 Tech Stack
-- HTML/CSS/JS (single-page, no framework for speed)
-- Glassmorphism + CSS animations
-- Mobile-first responsive
-- Netlify deployment
+## 3. Viral / Engagement Boosters
+
+### [NEW] Community Meme Gallery
+*   **Objective**: Showcase community creativity and drive shareability.
+*   **Feature**: A masonry grid section showcasing elite ANIMEMAXXING memes.
+*   **Interaction**: Hover zoom and optional "Share to X" button on individual memes.
+
+### [NEW] "The Countdown" Component
+*   **Objective**: Create FOMO (Fear Of Missing Out) for Launch or Major Updates.
+*   **Feature**: A stylized neon countdown timer (e.g., "Time until the next ARC begins").
+
+### [UPDATE] Community Link Audit
+*   **Action**: Link the social buttons to the actual Telegram community and official X account.
+*   **Polish**: Add "Online Now" status indicator to the Telegram card.
 
 ---
 
-## 📈 Success Criteria
-- Premium, viral-worthy aesthetic
-- < 2s load time
-- Mobile-responsive
-- One-click contract address copy
-- All CTAs functional
+## 4. Master Polish (Visual & Motion)
+
+### [NEW] Cinematic Grain & Noise Overlay
+*   **Objective**: Achieve the "Premium Shonen" texture (Azuki/Modern Anime style).
+*   **Feature**: A subtle animated noise overlay and retro scanline refinement across the entire site.
+
+### [UPDATE] Advanced Parallax Pass
+*   **Objective**: Create depth in the hero and background.
+*   **Action**: Multi-layered parallax for floating particles and "Shanks" background art.
+
+### [UPDATE] Glassmorphism 2.0
+*   **Objective**: Refine card aesthetics.
+*   **Action**: Implement multi-stop border gradients and "Dynamic Inner Glow" on hover for all cards.
 
 ---
 
-*Last updated: 2026-02-21*
+## 5. Success Metrics
+*   **0 Mobile UX Errors**: Full navigation functionality on all screen sizes.
+*   **Retainment**: Increased average session duration due to interactive curiosity (cursor/easter eggs).
+*   **Shareability**: Users taking screenshots of the "Metamorphosis" reveal or Meme Gallery.
