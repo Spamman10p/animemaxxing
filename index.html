@@ -22,6 +22,9 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- Spline Integration Skill -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.51/build/spline-viewer.js"></script>
 </head>
 
 <body>
@@ -118,6 +121,12 @@
       </div>
     </div>
 
+    <!-- Spline 3D Background Injection -->
+    <div
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.8;">
+      <spline-viewer url="https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"></spline-viewer>
+    </div>
+
     <!-- Animated Orbs -->
     <div class="hero__orb hero__orb--cyan"></div>
     <div class="hero__orb hero__orb--crimson"></div>
@@ -144,7 +153,8 @@
           Solo Leveling. JJK S3. Blue Lock. The next arc is <span>ANIMEMAXXING.</span></p>
 
         <div class="hero__actions">
-          <a href="https://pump.fun" class="btn btn--primary btn--hero-ape" id="apeBtn" target="_blank" rel="noopener">
+          <a href="https://pump.fun" class="btn btn--primary btn--hero-ape btn--aura" id="apeBtn" target="_blank"
+            rel="noopener">
             <span class="btn__inner">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -542,8 +552,7 @@
        HOW TO BUY
        ============================================ -->
   <section class="howtobuy bg-art-section" id="howtobuy">
-    <img src="meta_bg_1.jpg" alt="" class="bg-art-asset bg-art-asset--1"
-      style="opacity: 0.05; filter: blur(100px);">
+    <img src="meta_bg_1.jpg" alt="" class="bg-art-asset bg-art-asset--1" style="opacity: 0.05; filter: blur(100px);">
     <div class="container">
       <div class="section-header reveal">
         <p class="section-header__label text-glow">Get In</p>
@@ -592,8 +601,7 @@
        MEME ART GALLERY
        ============================================ -->
   <section class="gallery bg-art-section" id="gallery">
-    <img src="meta_bg_1.jpg" alt="" class="bg-art-asset bg-art-asset--1"
-      style="opacity: 0.04; filter: blur(120px);">
+    <img src="meta_bg_1.jpg" alt="" class="bg-art-asset bg-art-asset--1" style="opacity: 0.04; filter: blur(120px);">
     <div class="container">
       <div class="section-header reveal">
         <p class="section-header__label text-glow">Community Art</p>
@@ -658,11 +666,12 @@
         </div>
 
         <div class="gallery__item reveal" data-category="meme" data-tilt>
-          <img src="gallery_bought_dip.png" alt="POV: You Bought The Dip" loading="lazy">
+          <video src="the_ape_in_reaction.mp4" autoplay loop muted playsinline
+            style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"></video>
           <div class="gallery__overlay">
             <span class="gallery__tag">MEME</span>
-            <h4 class="gallery__caption">Bought The Dip</h4>
-            <p class="gallery__sub">...And It Keeps Dipping</p>
+            <h4 class="gallery__caption">The Ape In</h4>
+            <p class="gallery__sub">Stop Coping. Start Maxxing.</p>
           </div>
         </div>
 
@@ -737,8 +746,7 @@
        COMMUNITY / CTA SECTION
        ============================================ -->
   <section class="community bg-art-section" id="community">
-    <img src="meta_bg_2.jpg" alt="" class="bg-art-asset bg-art-asset--2"
-      style="opacity: 0.05; filter: blur(80px);">
+    <img src="meta_bg_2.jpg" alt="" class="bg-art-asset bg-art-asset--2" style="opacity: 0.05; filter: blur(80px);">
     <div class="container">
       <div class="community__cta-box reveal">
         <div class="hero__orb hero__orb--cyan" style="width: 300px; height: 300px; top: -150px; right: -150px;"></div>
